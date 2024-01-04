@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="runner.ApiRunner" tests="6" skipped="0" failures="0" errors="0" timestamp="2024-01-04T09:24:36" hostname="PVSNB0114" time="5.589">
+  <properties/>
+  <testcase name="Test get list data user" classname="runner.ApiRunner" time="2.839"/>
+  <testcase name="Test create new user" classname="runner.ApiRunner" time="0.588"/>
+  <testcase name="Test create new without name" classname="runner.ApiRunner" time="0.259"/>
+  <testcase name="Test update user name" classname="runner.ApiRunner" time="0.749"/>
+  <testcase name="Test update users status NA" classname="runner.ApiRunner" time="0.579"/>
+  <testcase name="Test delete users" classname="runner.ApiRunner" time="0.571"/>
+  <system-out><![CDATA[BeforeAll
+
+@api @apiGetUser
+Scenario: Test get list data user                                     ?[90m# src/test/java/features/api.feature:6?[0m
+BeforeTest
+setURL : https://gorest.co.in/public/v2/users
+  ?[32mGiven ?[0m?[32murl for ?[0m?[32m?[1m"GET_LIST_USERS"?[0m                                      ?[90m# StepDef.ApiStep.urlFor(java.lang.String)?[0m
+respnse body: [{"id":5886147,"name":"Rep. Kalinda Malik","email":"malik_rep_kalinda@bailey-rodriguez.test","gender":"male","status":"active"},{"id":5886146,"name":"Abhirath Banerjee","email":"banerjee_abhirath@orn.test","gender":"female","status":"inactive"},{"id":5886145,"name":"Rep. Brajesh Iyengar","email":"iyengar_brajesh_rep@berge-langworth.test","gender":"male","status":"active"},{"id":5886144,"name":"Rageswari Shukla","email":"shukla_rageswari@mcglynn.test","gender":"female","status":"inactive"},{"id":5886143,"name":"Mani Trivedi","email":"mani_trivedi@emard.example","gender":"female","status":"active"},{"id":5886142,"name":"Pran Kakkar","email":"kakkar_pran@rippin-marks.example","gender":"male","status":"inactive"},{"id":5886141,"name":"Aalok Chaturvedi","email":"chaturvedi_aalok@schinner.example","gender":"male","status":"inactive"},{"id":5886140,"name":"Gov. Bharat Verma","email":"gov_bharat_verma@bashirian.test","gender":"female","status":"active"},{"id":5886139,"name":"Dayaanidhi Gill","email":"gill_dayaanidhi@gleichner-hirthe.example","gender":"male","status":"inactive"},{"id":5886138,"name":"Satish Khatri","email":"satish_khatri@orn-nienow.example","gender":"female","status":"inactive"}]
+  ?[32mAnd ?[0m?[32mhit api to get list users?[0m                                       ?[90m# StepDef.ApiStep.hitApiToGetListUsers()?[0m
+status code : 200
+  ?[32mThen ?[0m?[32mvalidation status code is equals ?[0m?[32m?[1m200?[0m                           ?[90m# StepDef.ApiStep.validationStatusCodeIsEquals(int)?[0m
+  ?[32mThen ?[0m?[32mvalidation response body get list users?[0m                        ?[90m# StepDef.ApiStep.validationResponseBodyGetListUsers()?[0m
+JSONFilenya : src\test\java\utility\JSONSchemaData\get_list_users.json
+  ?[32mThen ?[0m?[32mvalidation response json with JSONSchema ?[0m?[32m?[1m"get_list_users.json"?[0m ?[90m# StepDef.ApiStep.validationResponseJsonWithJSONSchema(java.lang.String)?[0m
+AfterTest
+
+@api @apiCreateUser
+Scenario: Test create new user                                        ?[90m# src/test/java/features/api.feature:14?[0m
+BeforeTest
+setURL : https://gorest.co.in/public/v2/users
+  ?[32mGiven ?[0m?[32murl for ?[0m?[32m?[1m"CREATE_NEW_USERS"?[0m                                    ?[90m# StepDef.ApiStep.urlFor(java.lang.String)?[0m
+{"id":5891324,"name":"Ari Sragen","email":"LAQFL@arisaja.com","gender":"male","status":"active"}
+  ?[32mAnd ?[0m?[32mhit api to create new users?[0m                                     ?[90m# StepDef.ApiStep.hitApiToCreateNewUsers()?[0m
+status code : 201
+  ?[32mThen ?[0m?[32mvalidation status code is equals ?[0m?[32m?[1m201?[0m                           ?[90m# StepDef.ApiStep.validationStatusCodeIsEquals(int)?[0m
+  ?[32mThen ?[0m?[32mvalidation response body create new users?[0m                      ?[90m# StepDef.ApiStep.validationResponseBodyCreateNewUsers()?[0m
+JSONFilenya : src\test\java\utility\JSONSchemaData\post_new_users.json
+  ?[32mThen ?[0m?[32mvalidation response json with JSONSchema ?[0m?[32m?[1m"post_new_users.json"?[0m ?[90m# StepDef.ApiStep.validationResponseJsonWithJSONSchema(java.lang.String)?[0m
+AfterTest
+
+@api @apiCreateUserNegative
+Scenario: Test create new without name                                             ?[90m# src/test/java/features/api.feature:23?[0m
+BeforeTest
+setURL : https://gorest.co.in/public/v2/users
+  ?[32mGiven ?[0m?[32murl for ?[0m?[32m?[1m"CREATE_NEW_USERS"?[0m                                                 ?[90m# StepDef.ApiStep.urlFor(java.lang.String)?[0m
+[{"field":"name","message":"can't be blank"}]
+  ?[32mAnd ?[0m?[32mhit api to create new users without name?[0m                                     ?[90m# StepDef.ApiStep.hitApiToCreateNewUsersWithoutName()?[0m
+status code : 422
+  ?[32mThen ?[0m?[32mvalidation status code is equals ?[0m?[32m?[1m422?[0m                                        ?[90m# StepDef.ApiStep.validationStatusCodeIsEquals(int)?[0m
+JSONFilenya : src\test\java\utility\JSONSchemaData\post_new_users_without_name.json
+  ?[32mThen ?[0m?[32mvalidation response json with JSONSchema ?[0m?[32m?[1m"post_new_users_without_name.json"?[0m ?[90m# StepDef.ApiStep.validationResponseJsonWithJSONSchema(java.lang.String)?[0m
+AfterTest
+
+@api @apiUpdateUser
+Scenario: Test update user name                  ?[90m# src/test/java/features/api.feature:31?[0m
+BeforeTest
+setURL : https://gorest.co.in/public/v2/users
+  ?[32mGiven ?[0m?[32murl for ?[0m?[32m?[1m"CREATE_NEW_USERS"?[0m               ?[90m# StepDef.ApiStep.urlFor(java.lang.String)?[0m
+{"id":5891325,"name":"Ari Sragen","email":"nIJMo@arisaja.com","gender":"male","status":"active"}
+  ?[32mAnd ?[0m?[32mhit api to create new users?[0m                ?[90m# StepDef.ApiStep.hitApiToCreateNewUsers()?[0m
+status code : 201
+  ?[32mThen ?[0m?[32mvalidation status code is equals ?[0m?[32m?[1m201?[0m      ?[90m# StepDef.ApiStep.validationStatusCodeIsEquals(int)?[0m
+  ?[32mThen ?[0m?[32mvalidation response body create new users?[0m ?[90m# StepDef.ApiStep.validationResponseBodyCreateNewUsers()?[0m
+id yang akan di update : 5891325
+update data : {"email":"r2T58@arisaja.com","name":"Ari Edit","gender":"male","status":"active","id":5891325}
+  ?[32mAnd ?[0m?[32mhit api to update users?[0m                    ?[90m# StepDef.ApiStep.hitApiToUpdateUsers()?[0m
+status code : 200
+  ?[32mThen ?[0m?[32mvalidation status code is equals ?[0m?[32m?[1m200?[0m      ?[90m# StepDef.ApiStep.validationStatusCodeIsEquals(int)?[0m
+  ?[32mThen ?[0m?[32mvalidation response body update user?[0m      ?[90m# StepDef.ApiStep.validationResponseBodyUpdateUser()?[0m
+AfterTest
+
+@api @apiUpdateUserEdgeNegative
+Scenario: Test update users status NA                                             ?[90m# src/test/java/features/api.feature:43?[0m
+BeforeTest
+setURL : https://gorest.co.in/public/v2/users
+  ?[32mGiven ?[0m?[32murl for ?[0m?[32m?[1m"CREATE_NEW_USERS"?[0m                                                ?[90m# StepDef.ApiStep.urlFor(java.lang.String)?[0m
+{"id":5891326,"name":"Ari Sragen","email":"i2oEq@arisaja.com","gender":"male","status":"active"}
+  ?[32mAnd ?[0m?[32mhit api to create new users?[0m                                                 ?[90m# StepDef.ApiStep.hitApiToCreateNewUsers()?[0m
+status code : 201
+  ?[32mThen ?[0m?[32mvalidation status code is equals ?[0m?[32m?[1m201?[0m                                       ?[90m# StepDef.ApiStep.validationStatusCodeIsEquals(int)?[0m
+  ?[32mThen ?[0m?[32mvalidation response body create new users?[0m                                  ?[90m# StepDef.ApiStep.validationResponseBodyCreateNewUsers()?[0m
+[{"field":"status","message":"can't be blank"}]
+  ?[32mAnd ?[0m?[32mhit api to update users with status NA?[0m                                      ?[90m# StepDef.ApiStep.hitApiToUpdateUsersWithStatusNA()?[0m
+status code : 422
+  ?[32mThen ?[0m?[32mvalidation status code is equals ?[0m?[32m?[1m422?[0m                                       ?[90m# StepDef.ApiStep.validationStatusCodeIsEquals(int)?[0m
+JSONFilenya : src\test\java\utility\JSONSchemaData\patch_users_with_status_NA.json
+  ?[32mThen ?[0m?[32mvalidation response json with JSONSchema ?[0m?[32m?[1m"patch_users_with_status_NA.json"?[0m ?[90m# StepDef.ApiStep.validationResponseJsonWithJSONSchema(java.lang.String)?[0m
+AfterTest
+
+@api @apiDeleteUser
+Scenario: Test delete users                      ?[90m# src/test/java/features/api.feature:54?[0m
+BeforeTest
+setURL : https://gorest.co.in/public/v2/users
+  ?[32mGiven ?[0m?[32murl for ?[0m?[32m?[1m"CREATE_NEW_USERS"?[0m               ?[90m# StepDef.ApiStep.urlFor(java.lang.String)?[0m
+{"id":5891327,"name":"Ari Sragen","email":"MfDua@arisaja.com","gender":"male","status":"active"}
+  ?[32mAnd ?[0m?[32mhit api to create new users?[0m                ?[90m# StepDef.ApiStep.hitApiToCreateNewUsers()?[0m
+status code : 201
+  ?[32mThen ?[0m?[32mvalidation status code is equals ?[0m?[32m?[1m201?[0m      ?[90m# StepDef.ApiStep.validationStatusCodeIsEquals(int)?[0m
+  ?[32mThen ?[0m?[32mvalidation response body create new users?[0m ?[90m# StepDef.ApiStep.validationResponseBodyCreateNewUsers()?[0m
+id yang akan di delete : 5891327
+  ?[32mAnd ?[0m?[32mhit api to delete users?[0m                    ?[90m# StepDef.ApiStep.hitApiToDeleteUsers()?[0m
+status code : 204
+  ?[32mThen ?[0m?[32mvalidation status code is equals ?[0m?[32m?[1m204?[0m      ?[90m# StepDef.ApiStep.validationStatusCodeIsEquals(int)?[0m
+AfterTest
+AfterAll
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - ApiRunner</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>ApiRunner</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/runner.html">runner</a> &gt; ApiRunner</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">6</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">5.585s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">Test create new user</td>
+<td class="success">0.588s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Test create new without name</td>
+<td class="success">0.259s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Test delete users</td>
+<td class="success">0.571s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Test get list data user</td>
+<td class="success">2.839s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Test update user name</td>
+<td class="success">0.749s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Test update users status NA</td>
+<td class="success">0.579s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>BeforeAll
+
+@api @apiGetUser
+Scenario: Test get list data user                                     ?[90m# src/test/java/features/api.feature:6?[0m
+BeforeTest
+setURL : https://gorest.co.in/public/v2/users
+  ?[32mGiven ?[0m?[32murl for ?[0m?[32m?[1m&quot;GET_LIST_USERS&quot;?[0m                                      ?[90m# StepDef.ApiStep.urlFor(java.lang.String)?[0m
+respnse body: [{&quot;id&quot;:5886147,&quot;name&quot;:&quot;Rep. Kalinda Malik&quot;,&quot;email&quot;:&quot;malik_rep_kalinda@bailey-rodriguez.test&quot;,&quot;gender&quot;:&quot;male&quot;,&quot;status&quot;:&quot;active&quot;},{&quot;id&quot;:5886146,&quot;name&quot;:&quot;Abhirath Banerjee&quot;,&quot;email&quot;:&quot;banerjee_abhirath@orn.test&quot;,&quot;gender&quot;:&quot;female&quot;,&quot;status&quot;:&quot;inactive&quot;},{&quot;id&quot;:5886145,&quot;name&quot;:&quot;Rep. Brajesh Iyengar&quot;,&quot;email&quot;:&quot;iyengar_brajesh_rep@berge-langworth.test&quot;,&quot;gender&quot;:&quot;male&quot;,&quot;status&quot;:&quot;active&quot;},{&quot;id&quot;:5886144,&quot;name&quot;:&quot;Rageswari Shukla&quot;,&quot;email&quot;:&quot;shukla_rageswari@mcglynn.test&quot;,&quot;gender&quot;:&quot;female&quot;,&quot;status&quot;:&quot;inactive&quot;},{&quot;id&quot;:5886143,&quot;name&quot;:&quot;Mani Trivedi&quot;,&quot;email&quot;:&quot;mani_trivedi@emard.example&quot;,&quot;gender&quot;:&quot;female&quot;,&quot;status&quot;:&quot;active&quot;},{&quot;id&quot;:5886142,&quot;name&quot;:&quot;Pran Kakkar&quot;,&quot;email&quot;:&quot;kakkar_pran@rippin-marks.example&quot;,&quot;gender&quot;:&quot;male&quot;,&quot;status&quot;:&quot;inactive&quot;},{&quot;id&quot;:5886141,&quot;name&quot;:&quot;Aalok Chaturvedi&quot;,&quot;email&quot;:&quot;chaturvedi_aalok@schinner.example&quot;,&quot;gender&quot;:&quot;male&quot;,&quot;status&quot;:&quot;inactive&quot;},{&quot;id&quot;:5886140,&quot;name&quot;:&quot;Gov. Bharat Verma&quot;,&quot;email&quot;:&quot;gov_bharat_verma@bashirian.test&quot;,&quot;gender&quot;:&quot;female&quot;,&quot;status&quot;:&quot;active&quot;},{&quot;id&quot;:5886139,&quot;name&quot;:&quot;Dayaanidhi Gill&quot;,&quot;email&quot;:&quot;gill_dayaanidhi@gleichner-hirthe.example&quot;,&quot;gender&quot;:&quot;male&quot;,&quot;status&quot;:&quot;inactive&quot;},{&quot;id&quot;:5886138,&quot;name&quot;:&quot;Satish Khatri&quot;,&quot;email&quot;:&quot;satish_khatri@orn-nienow.example&quot;,&quot;gender&quot;:&quot;female&quot;,&quot;status&quot;:&quot;inactive&quot;}]
+  ?[32mAnd ?[0m?[32mhit api to get list users?[0m                                       ?[90m# StepDef.ApiStep.hitApiToGetListUsers()?[0m
+status code : 200
+  ?[32mThen ?[0m?[32mvalidation status code is equals ?[0m?[32m?[1m200?[0m                           ?[90m# StepDef.ApiStep.validationStatusCodeIsEquals(int)?[0m
+  ?[32mThen ?[0m?[32mvalidation response body get list users?[0m                        ?[90m# StepDef.ApiStep.validationResponseBodyGetListUsers()?[0m
+JSONFilenya : src\test\java\utility\JSONSchemaData\get_list_users.json
+  ?[32mThen ?[0m?[32mvalidation response json with JSONSchema ?[0m?[32m?[1m&quot;get_list_users.json&quot;?[0m ?[90m# StepDef.ApiStep.validationResponseJsonWithJSONSchema(java.lang.String)?[0m
+AfterTest
+
+@api @apiCreateUser
+Scenario: Test create new user                                        ?[90m# src/test/java/features/api.feature:14?[0m
+BeforeTest
+setURL : https://gorest.co.in/public/v2/users
+  ?[32mGiven ?[0m?[32murl for ?[0m?[32m?[1m&quot;CREATE_NEW_USERS&quot;?[0m                                    ?[90m# StepDef.ApiStep.urlFor(java.lang.String)?[0m
+{&quot;id&quot;:5891324,&quot;name&quot;:&quot;Ari Sragen&quot;,&quot;email&quot;:&quot;LAQFL@arisaja.com&quot;,&quot;gender&quot;:&quot;male&quot;,&quot;status&quot;:&quot;active&quot;}
+  ?[32mAnd ?[0m?[32mhit api to create new users?[0m                                     ?[90m# StepDef.ApiStep.hitApiToCreateNewUsers()?[0m
+status code : 201
+  ?[32mThen ?[0m?[32mvalidation status code is equals ?[0m?[32m?[1m201?[0m                           ?[90m# StepDef.ApiStep.validationStatusCodeIsEquals(int)?[0m
+  ?[32mThen ?[0m?[32mvalidation response body create new users?[0m                      ?[90m# StepDef.ApiStep.validationResponseBodyCreateNewUsers()?[0m
+JSONFilenya : src\test\java\utility\JSONSchemaData\post_new_users.json
+  ?[32mThen ?[0m?[32mvalidation response json with JSONSchema ?[0m?[32m?[1m&quot;post_new_users.json&quot;?[0m ?[90m# StepDef.ApiStep.validationResponseJsonWithJSONSchema(java.lang.String)?[0m
+AfterTest
+
+@api @apiCreateUserNegative
+Scenario: Test create new without name                                             ?[90m# src/test/java/features/api.feature:23?[0m
+BeforeTest
+setURL : https://gorest.co.in/public/v2/users
+  ?[32mGiven ?[0m?[32murl for ?[0m?[32m?[1m&quot;CREATE_NEW_USERS&quot;?[0m                                                 ?[90m# StepDef.ApiStep.urlFor(java.lang.String)?[0m
+[{&quot;field&quot;:&quot;name&quot;,&quot;message&quot;:&quot;can't be blank&quot;}]
+  ?[32mAnd ?[0m?[32mhit api to create new users without name?[0m                                     ?[90m# StepDef.ApiStep.hitApiToCreateNewUsersWithoutName()?[0m
+status code : 422
+  ?[32mThen ?[0m?[32mvalidation status code is equals ?[0m?[32m?[1m422?[0m                                        ?[90m# StepDef.ApiStep.validationStatusCodeIsEquals(int)?[0m
+JSONFilenya : src\test\java\utility\JSONSchemaData\post_new_users_without_name.json
+  ?[32mThen ?[0m?[32mvalidation response json with JSONSchema ?[0m?[32m?[1m&quot;post_new_users_without_name.json&quot;?[0m ?[90m# StepDef.ApiStep.validationResponseJsonWithJSONSchema(java.lang.String)?[0m
+AfterTest
+
+@api @apiUpdateUser
+Scenario: Test update user name                  ?[90m# src/test/java/features/api.feature:31?[0m
+BeforeTest
+setURL : https://gorest.co.in/public/v2/users
+  ?[32mGiven ?[0m?[32murl for ?[0m?[32m?[1m&quot;CREATE_NEW_USERS&quot;?[0m               ?[90m# StepDef.ApiStep.urlFor(java.lang.String)?[0m
+{&quot;id&quot;:5891325,&quot;name&quot;:&quot;Ari Sragen&quot;,&quot;email&quot;:&quot;nIJMo@arisaja.com&quot;,&quot;gender&quot;:&quot;male&quot;,&quot;status&quot;:&quot;active&quot;}
+  ?[32mAnd ?[0m?[32mhit api to create new users?[0m                ?[90m# StepDef.ApiStep.hitApiToCreateNewUsers()?[0m
+status code : 201
+  ?[32mThen ?[0m?[32mvalidation status code is equals ?[0m?[32m?[1m201?[0m      ?[90m# StepDef.ApiStep.validationStatusCodeIsEquals(int)?[0m
+  ?[32mThen ?[0m?[32mvalidation response body create new users?[0m ?[90m# StepDef.ApiStep.validationResponseBodyCreateNewUsers()?[0m
+id yang akan di update : 5891325
+update data : {&quot;email&quot;:&quot;r2T58@arisaja.com&quot;,&quot;name&quot;:&quot;Ari Edit&quot;,&quot;gender&quot;:&quot;male&quot;,&quot;status&quot;:&quot;active&quot;,&quot;id&quot;:5891325}
+  ?[32mAnd ?[0m?[32mhit api to update users?[0m                    ?[90m# StepDef.ApiStep.hitApiToUpdateUsers()?[0m
+status code : 200
+  ?[32mThen ?[0m?[32mvalidation status code is equals ?[0m?[32m?[1m200?[0m      ?[90m# StepDef.ApiStep.validationStatusCodeIsEquals(int)?[0m
+  ?[32mThen ?[0m?[32mvalidation response body update user?[0m      ?[90m# StepDef.ApiStep.validationResponseBodyUpdateUser()?[0m
+AfterTest
+
+@api @apiUpdateUserEdgeNegative
+Scenario: Test update users status NA                                             ?[90m# src/test/java/features/api.feature:43?[0m
+BeforeTest
+setURL : https://gorest.co.in/public/v2/users
+  ?[32mGiven ?[0m?[32murl for ?[0m?[32m?[1m&quot;CREATE_NEW_USERS&quot;?[0m                                                ?[90m# StepDef.ApiStep.urlFor(java.lang.String)?[0m
+{&quot;id&quot;:5891326,&quot;name&quot;:&quot;Ari Sragen&quot;,&quot;email&quot;:&quot;i2oEq@arisaja.com&quot;,&quot;gender&quot;:&quot;male&quot;,&quot;status&quot;:&quot;active&quot;}
+  ?[32mAnd ?[0m?[32mhit api to create new users?[0m                                                 ?[90m# StepDef.ApiStep.hitApiToCreateNewUsers()?[0m
+status code : 201
+  ?[32mThen ?[0m?[32mvalidation status code is equals ?[0m?[32m?[1m201?[0m                                       ?[90m# StepDef.ApiStep.validationStatusCodeIsEquals(int)?[0m
+  ?[32mThen ?[0m?[32mvalidation response body create new users?[0m                                  ?[90m# StepDef.ApiStep.validationResponseBodyCreateNewUsers()?[0m
+[{&quot;field&quot;:&quot;status&quot;,&quot;message&quot;:&quot;can't be blank&quot;}]
+  ?[32mAnd ?[0m?[32mhit api to update users with status NA?[0m                                      ?[90m# StepDef.ApiStep.hitApiToUpdateUsersWithStatusNA()?[0m
+status code : 422
+  ?[32mThen ?[0m?[32mvalidation status code is equals ?[0m?[32m?[1m422?[0m                                       ?[90m# StepDef.ApiStep.validationStatusCodeIsEquals(int)?[0m
+JSONFilenya : src\test\java\utility\JSONSchemaData\patch_users_with_status_NA.json
+  ?[32mThen ?[0m?[32mvalidation response json with JSONSchema ?[0m?[32m?[1m&quot;patch_users_with_status_NA.json&quot;?[0m ?[90m# StepDef.ApiStep.validationResponseJsonWithJSONSchema(java.lang.String)?[0m
+AfterTest
+
+@api @apiDeleteUser
+Scenario: Test delete users                      ?[90m# src/test/java/features/api.feature:54?[0m
+BeforeTest
+setURL : https://gorest.co.in/public/v2/users
+  ?[32mGiven ?[0m?[32murl for ?[0m?[32m?[1m&quot;CREATE_NEW_USERS&quot;?[0m               ?[90m# StepDef.ApiStep.urlFor(java.lang.String)?[0m
+{&quot;id&quot;:5891327,&quot;name&quot;:&quot;Ari Sragen&quot;,&quot;email&quot;:&quot;MfDua@arisaja.com&quot;,&quot;gender&quot;:&quot;male&quot;,&quot;status&quot;:&quot;active&quot;}
+  ?[32mAnd ?[0m?[32mhit api to create new users?[0m                ?[90m# StepDef.ApiStep.hitApiToCreateNewUsers()?[0m
+status code : 201
+  ?[32mThen ?[0m?[32mvalidation status code is equals ?[0m?[32m?[1m201?[0m      ?[90m# StepDef.ApiStep.validationStatusCodeIsEquals(int)?[0m
+  ?[32mThen ?[0m?[32mvalidation response body create new users?[0m ?[90m# StepDef.ApiStep.validationResponseBodyCreateNewUsers()?[0m
+id yang akan di delete : 5891327
+  ?[32mAnd ?[0m?[32mhit api to delete users?[0m                    ?[90m# StepDef.ApiStep.hitApiToDeleteUsers()?[0m
+status code : 204
+  ?[32mThen ?[0m?[32mvalidation status code is equals ?[0m?[32m?[1m204?[0m      ?[90m# StepDef.ApiStep.validationStatusCodeIsEquals(int)?[0m
+AfterTest
+AfterAll
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.2</a> at Jan 4, 2024, 4:24:42 PM</p>
+</div>
+</div>
+</body>
+</html>
